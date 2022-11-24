@@ -2,6 +2,7 @@
 
 void meaningfulUint_t();
 void meaningfulBitset();
+void RGBA();
 
 int main()
 {
@@ -39,6 +40,7 @@ int main()
 
     meaningfulUint_t();
     meaningfulBitset();
+    RGBA();
 
     return 0;
 }
@@ -85,4 +87,8 @@ void meaningfulBitset()
         << ' ' << ((me & isHappy) == isHappy) << '\n';
     std::cout << "I am laughing? " << (me & isLaughing).any()
         << ' ' << ((me & isLaughing) == isLaughing) << '\n';
+}
+
+void RGBA()
+{
 }
