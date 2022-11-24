@@ -14,6 +14,7 @@ int main()
     std::cout << "float:\t\t" << sizeof(float) << " bytes\n";
     std::cout << "double:\t\t" << sizeof(double) << " bytes\n";
     std::cout << "long double:\t" << sizeof(long double) << " bytes\n";
+    std::cout << "pointer:\t" << sizeof(int *) << " bytes\n";
 
     return 0;
 }
