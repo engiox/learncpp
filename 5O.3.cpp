@@ -91,4 +91,24 @@ void meaningfulBitset()
 
 void RGBA()
 {
+    constexpr std::uint32_t redBits{ 0xff00'0000 };
+    constexpr std::uint32_t greenBits{ 0x00ff'0000 };
+    constexpr std::uint32_t blueBits{ 0x0000'ff00 };
+    constexpr std::uint32_t alphaBits{ 0x0000'00ff };
+
+    std::cout << "Enter a 32-bit RGBA color value in hexadecimal (e.g. FF7F3300): ";
+    std::uint32_t pixel{};
+    std::cin >> std::hex >> pixel;
+
+    std::uint8_t red{ static_cast<std::uint8_t>((pixel & redBits) >> 24) };
+    std::uint8_t green{ static_cast<std::uint8_t>((pixel & greenBits) >> 16) };
+    std::uint8_t blue{ static_cast<std::uint8_t>((pixel & blueBits) >> 8) };
+    std::uint8_t alpha{ static_cast<std::uint8_t>(pixel & alphaBits) };
+
+    std::cout << "Your color contains:\n";
+    std::cout << std::hex;
+    std::cout << static_cast<int>(red) << " red\n";
+    std::cout << static_cast<int>(green) << " green\n";
+    std::cout << static_cast<int>(blue) << " blue\n";
+    std::cout << static_cast<int>(alpha) << " alpha\n";
 }
