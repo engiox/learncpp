@@ -1,0 +1,8 @@
+       non-const global variable : external linkage
+static non-const global variable : internal linkage
+           const global variable : internal linkage
+       constexpr global variable : internal linkage
+     external constexpr variable : external variable NOT available at compile time
+                 inline variable : external linkage
+                       functions : external linkage
+                static functions : internal linkage
