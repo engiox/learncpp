@@ -6,3 +6,7 @@ static non-const global variable : internal linkage
                  inline variable : external linkage
                        functions : external linkage
                 static functions : internal linkage
+
+#6.12
+avoid "using directives" especially "using namespace std;"
+   => exception : "using namespace std::literals" to access "s" & "sv" literal suffixes
