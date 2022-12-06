@@ -1,5 +1,5 @@
 #include <iostream>
-#include "constants.h"
+#include "./q6s.2_constants.h"
 
 int main()
 {
