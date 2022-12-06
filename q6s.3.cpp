@@ -1,5 +1,12 @@
 #include <iostream>
 
+bool passOrFail()
+{
+    static int num { 0 };
+    ++num;
+    return (num <= 3);
+}
+
 int main()
 {
 	std::cout << "User #1: " << (passOrFail() ? "Pass\n" : "Fail\n");
