@@ -1,0 +1,20 @@
+if (init-statement_optional condition) statement-true
+    statement-true is considered in an implicit block
+
+
+The [[fallthrough]] attribute (C++17) : indicates intentional fallthrough of switch-case
+    ...
+    case 2:
+        std::cout << 2 << '\n';
+        [[fallthrough]];
+    case 3:
+    ...
+
+With if statements, you can only have a single statement after the if-condition,
+and that statement is considered to be implicitly inside a block
+
+However, with switch statements, the statements after labels are all scoped to the the switch block.
+No implicit blocks are created.
+
+All statements inside the switch are considered to be part of the same scope.
+Variables definitions and assignments are allowed, but initializations are NOT!(EXCEPT the last case)
