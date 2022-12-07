@@ -72,13 +72,16 @@ void fourth()
         case 1:
             int x;
             x = 1;
+            std::cout << "int x;   x = 1;\n";
+            std::cout << "x = " << x << '\n';
             break;
         case 2:
             std::cout << "x = " << x << '\n';
             break;
         default:
-            std::cout << "Only 1 or 2 will be processed\n";
+            std::cout << "default: int y {3};\n";
             int y {3};
+            std::cout << "x = " << x << '\n';
             std::cout << "y = " << y << '\n';
             break;
     }
@@ -86,9 +89,9 @@ void fourth()
 
 int main()
 {
-    first();
-    second();
-    third();
+//    first();
+//    second();
+//    third();
     fourth();
 
     return 0;

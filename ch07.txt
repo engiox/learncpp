@@ -18,3 +18,14 @@ No implicit blocks are created.
 
 All statements inside the switch are considered to be part of the same scope.
 Variables definitions and assignments are allowed, but initializations are NOT!(EXCEPT the last case)
+
+If defining variables used in a case statement, do so in a block inside the case.
+    case 45:
+    {
+        int x{ 4 };
+        std::cout << x;
+        break;
+    }
+
+One notable exception is when you need to exit a nested loop but not the entire function
+    -- in such a case, a goto to just beyond the loops is probably the cleanest solution.
