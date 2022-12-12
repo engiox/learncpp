@@ -29,3 +29,11 @@ If defining variables used in a case statement, do so in a block inside the case
 
 One notable exception is when you need to exit a nested loop but not the entire function
     -- in such a case, a goto to just beyond the loops is probably the cleanest solution.
+
+#include <cstdlib>
+std::atexit(cleanup);
+std::exit(0);
+std::at_quick_exit();
+std::quick_exit();
+std::abort();
+std::terminate();
