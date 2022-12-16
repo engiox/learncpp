@@ -9,6 +9,7 @@ void func4();
 void func5();
 void func6();
 void func7();
+int  getCard();
 
 int main()
 {
@@ -71,9 +72,17 @@ void func3()
     }
 }
 
+int getCard()
+{
+    std::mt19937 mt{ std::random_device{}() };
+    std::uniform_int_distribution<> card{ 1, 52 };
+    return card(mt);
+}
+
 void func4()
 {
     std::cout << "\nStarting func04()...\n";
+    std::cout << getCard();
 }
 
 void func5()
