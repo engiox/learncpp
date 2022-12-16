@@ -108,6 +108,16 @@ void func5()
 void func6()
 {
     std::cout << "\nStarting func06()...\n";
+    std::random_device rd;
+    std::seed_seq ss{ rd(), rd(), rd(), rd(), rd(), rd(), rd(), rd() };
+    std::mt19937 mt{ ss };
+    std::uniform_int_distribution<> die6{ 1, 6 };
+
+    for (int cnt{ 1 }; cnt <= 40; ++cnt) {
+        std::cout << die6(mt) << '\t';
+        if (cnt % 10 == 0)
+            std::cout << '\n';
+    }
 }
 
 void func7()
