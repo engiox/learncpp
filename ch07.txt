@@ -57,6 +57,7 @@ Pseudo Random Number Generators
     - Cacha family      : https://cr.yp.to/chacha.html
 
 ****** SEEDING with SYSTEM CLOCK ******
+
 #include <random>
 #include <chrono>
 
@@ -68,3 +69,13 @@ for (int i{0}; i < 100; ++i)
 
 std::chrono::high_resolution_clock : user CAN modify  (roll back)
 std::chrono::steady_clock          : user CANNOT modify
+
+****** SEEDING with RANDOM DEVICE ******
+
+#include <random>
+
+std::mt19937 mt{ std::random_device{}() };
+std::uniform_int_distribution die6{ 1, 6 };
+
+random_value = die6(mt);
+
