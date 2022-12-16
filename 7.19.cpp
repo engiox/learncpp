@@ -85,9 +85,24 @@ void func4()
     std::cout << getCard();
 }
 
+///////// namespace for func5 !!! /////////
+namespace Random
+{
+    std::mt19937 mt{ std::random_device{}() };
+
+    int getRandom(int min, int max)
+    {
+        std::uniform_int_distribution<> die{ min, max };
+        return die(mt);
+    }
+}
+
 void func5()
 {
     std::cout << "\nStarting func05()...\n";
+    std::cout << Random::getRandom(1, 6) << '\n';
+    std::cout << Random::getRandom(1, 10) << '\n';
+    std::cout << Random::getRandom(10, 20) << '\n';
 }
 
 void func6()
