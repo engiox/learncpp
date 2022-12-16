@@ -72,6 +72,19 @@ void func3()
     }
 }
 
+void func4()
+{
+    std::mt19937 mt{ std::random_device{}() };
+    std::uniform_int_distribution<> die6{ 1, 6 };
+
+    for (int i{ 1 }; i <=40; ++i) {
+        std::cout << die6(mt) << '\t';
+        if (i % 10 == 0)
+            std::cout << '\n';
+    }
+}
+
+///////// namespace for func5 !!! /////////
 int getCard()
 {
     std::mt19937 mt{ std::random_device{}() };
@@ -79,13 +92,13 @@ int getCard()
     return card(mt);
 }
 
-void func4()
+void func5()
 {
     std::cout << "\nStarting func04()...\n";
     std::cout << getCard();
 }
 
-///////// namespace for func5 !!! /////////
+///////// namespace for func6 !!! /////////
 namespace Random
 {
     std::mt19937 mt{ std::random_device{}() };
@@ -97,7 +110,7 @@ namespace Random
     }
 }
 
-void func5()
+void func6()
 {
     std::cout << "\nStarting func05()...\n";
     std::cout << Random::getRandom(1, 6) << '\n';
@@ -105,7 +118,7 @@ void func5()
     std::cout << Random::getRandom(10, 20) << '\n';
 }
 
-void func6()
+void func7()
 {
     std::cout << "\nStarting func06()...\n";
     std::random_device rd;
@@ -118,8 +131,4 @@ void func6()
         if (cnt % 10 == 0)
             std::cout << '\n';
     }
-}
-
-void func7()
-{
 }
