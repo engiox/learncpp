@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include <cmath>
 
 bool isPrime(int x)
 {
@@ -9,7 +10,9 @@ bool isPrime(int x)
         return false;
     }
 
-    for (int i { 2 }; i < x; ++i) {
+    int maxTest{ static_cast<int>(std::sqrt(x)) };
+
+    for (int i { 2 }; i <= maxTest; ++i) {
         if (!(x % i)) {
             std::cout << x << " is not a prime!\n";
             return false;
