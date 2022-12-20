@@ -34,7 +34,7 @@ int main()
 
     int time { 0 };
 
-    while (calculateHeight >= 0.0) {
+    while (calculateHeight(initialHeight, time) >= 0.0) {
         calculateAndPrintHeight(initialHeight, time);
         ++time;
     }
