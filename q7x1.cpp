@@ -25,12 +25,12 @@ int main()
     double initialHeight {};
     std::cin >> initialHeight;
 
-    calculateAndPrintHeight(initialHeight, 0);
-    calculateAndPrintHeight(initialHeight, 1);
-    calculateAndPrintHeight(initialHeight, 2);
-    calculateAndPrintHeight(initialHeight, 3);
-    calculateAndPrintHeight(initialHeight, 4);
-    calculateAndPrintHeight(initialHeight, 5);
+//    calculateAndPrintHeight(initialHeight, 0);
+//    calculateAndPrintHeight(initialHeight, 1);
+//    calculateAndPrintHeight(initialHeight, 2);
+//    calculateAndPrintHeight(initialHeight, 3);
+//    calculateAndPrintHeight(initialHeight, 4);
+//    calculateAndPrintHeight(initialHeight, 5);
 
     return 0;
 }
