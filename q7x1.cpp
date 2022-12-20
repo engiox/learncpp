@@ -32,5 +32,12 @@ int main()
 //    calculateAndPrintHeight(initialHeight, 4);
 //    calculateAndPrintHeight(initialHeight, 5);
 
+    int time { 0 };
+
+    while (calculateHeight >= 0.0) {
+        calculateAndPrintHeight(initialHeight, time);
+        ++time;
+    }
+
     return 0;
 }
