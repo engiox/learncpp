@@ -25,14 +25,38 @@ int getInteger()
     }
 }
 
-bool playGame(int guess, int number)
+bool playGame(int guesses, int number)
 {
+    for (int numChances{ 1 }; numChances <= guesses; ++numChances) {
+        std::cout << "guesses #" << numChances << ": ";
+        int answer{ getInteger() };
+        if (answer > number) {
+            std::cout << "Your guess is too high.\n";
+        } else if (answer < number) {
+            std::cout << "Your guess is too low.\n";
+        } else {
+            return true;
+        }
+    }
     return false;
 }
 
 bool playAgain()
 {
-    return false;
+    while (true) {
+        std::cout << "Would you like to try again (y/n) ? ";
+        char yorn{};
+        std::cin >> yorn;
+
+        switch (yorn) {
+            case 'y':
+                return true;
+            case 'n':
+                return false;
+            default:
+                continue;
+        }
+    }
 }
 
 int main()
