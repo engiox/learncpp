@@ -1,5 +1,10 @@
 #include <iostream>
 
+bool returnBool()
+{
+    return 6;
+}
+
 int main()
 {
     bool b{ true };
@@ -7,6 +12,8 @@ int main()
     std::cout << "Enter a boolean value: ";
     std::cin >> b;
     std::cout << "You entered: " << b << '\n';
+
+    std::cout << "Returning bool value from function: " << returnBool() << '\n';
 
     return 0;
 }
