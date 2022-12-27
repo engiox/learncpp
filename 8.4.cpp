@@ -1,3 +1,4 @@
+#include <ios>
 #include <iostream>
 #include <typeinfo>
 
@@ -11,6 +12,8 @@ int main()
     std::cout << typeid(a + b).name() << ' ' << a + b << '\n';
 
     std::cout << typeid(5u-10).name() << ' ' << 5u - 10 << '\n';
+
+    std::cout << std::boolalpha << (-3 < 5u) << '\n';
 
     return 0;
 }
