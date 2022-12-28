@@ -1,0 +1,4 @@
+###### 8.5 Explicit type conversion (casting) and static_cast
+
+* Warning : Avoid const casts and reinterpret casts unless you have a very good reason to use them.
+
