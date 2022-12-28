@@ -1,4 +1,11 @@
 ###### 8.5 Explicit type conversion (casting) and static_cast
 
 * Warning : Avoid const casts and reinterpret casts unless you have a very good reason to use them.
+* Best Practice : Avoid using C-style casts.
+                  Favor static_cast when you need to convert a value from one type to another type.
+                  Name your type aliases starting with a capital letter and do not use a suffix.
+                  Prefer type aliases over typedefs.
+
+typedef long Miles;
+using Miles = long;
 
