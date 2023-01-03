@@ -9,3 +9,32 @@
 typedef long Miles;
 using Miles = long;
 
+###### 8.6 Type dedection for functions
+
+Trailing return type syntax
+
+auto add(int x, int y) -> int;
+
+###### 8.11 Function overload resolution and ambiguous matches
+
+The argument matching sequence
+1) exact match + trivial conversions (const/non-const, reference/non-reference)
+2) numeric promotions
+3) numeric conversions
+4) user-defined conversions
+5) function with ellipsis
+6) give up and issue an compile error
+
+###### 8.12 Default arguments
+
+int print(int x, int y = 4)     // "=" required. parenthesis or brace init'n won't work.
+
+void foo(int x = 5);   // ok
+void goo(int x ( 5 )); // compile error
+void boo(int x { 5 }); // compile error
+
+Default arguments can not be redeclared
+* Best Practice : Put default arguments in forward declaration (esp. in header file) if possible.
+                  This enables other files see function's default arguments.
+
+ 
