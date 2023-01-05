@@ -1,2 +1,2 @@
-chapter 8.8 Trailing return type syntax
+9.2
 
