@@ -1,0 +1,71 @@
+###### 8.5 Explicit type conversion (casting) and static_cast
+
+* Warning : Avoid const casts and reinterpret casts unless you have a very good reason to use them.
+* Best Practice : Avoid using C-style casts.
+                  Favor static_cast when you need to convert a value from one type to another type.
+                  Name your type aliases starting with a capital letter and do not use a suffix.
+                  Prefer type aliases over typedefs.
+
+typedef long Miles;
+using Miles = long;
+
+###### 8.6 Type dedection for functions
+
+Trailing return type syntax
+
+auto add(int x, int y) -> int;
+
+###### 8.11 Function overload resolution and ambiguous matches
+
+The argument matching sequence
+1) exact match + trivial conversions (const/non-const, reference/non-reference)
+2) numeric promotions
+3) numeric conversions
+4) user-defined conversions
+5) function with ellipsis
+6) give up and issue an compile error
+
+###### 8.12 Default arguments
+
+int print(int x, int y = 4)     // "=" required. parenthesis or brace init'n won't work.
+
+void foo(int x = 5);   // ok
+void goo(int x ( 5 )); // compile error
+void boo(int x { 5 }); // compile error
+
+Default arguments can not be redeclared
+* Best Practice : Put default arguments in forward declaration (esp. in header file) if possible.
+                  This enables other files see function's default arguments.
+
+###### 8.14 Function template instantiation
+
+Template argument deduction (method * preferred)
+    std::cout <<  max<int>(1, 2) << '\n';  // consider only template "max<int>()"
+    std::cout <<  max<>(1, 2) << '\n';     // consider only template "max<>()"
+  * std::cout <<  max(1, 2) << '\n';       // consider both template & non-template(preferred) "max()"
+
+Using function templates in multiple files
+    - Instantiation requires full definition of template
+    - Typically written in .h header files
+    - Instantiatiated functions are IMPLICITLY INLINE, exempting from on-definition rule
+
+###### 8.15 Function templates with multiple template types
+
+template <typename T> T max(T x, T y) { return (x>y) ? x : y };
+    ==> compile error
+    type conversion done only when function overloading NOT template argument deduction
+
+Abbreviated function template (C++20)
+auto max(auto x, auto y)
+{
+    return (x>y) ? x : y;
+}
+
+    *** pre C++20 ***                          *** C++20 ***
+template <typename T, typname U>          auto max(auto x, auto y)
+auto max(T x, T u)                        {
+{                                             return (x>y) ? x : y;
+    return (x>y) ? x : y;                 }
+}
+
+

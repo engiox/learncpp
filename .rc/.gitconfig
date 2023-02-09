@@ -1,0 +1,8 @@
+[user]
+	email = engio@naver.com
+	name = engiox
+[core]
+	autocrlf = input
+[credential]
+	credentialStore = cache
+	helper = /mnt/d/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe

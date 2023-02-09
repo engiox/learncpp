@@ -1,0 +1,18 @@
+       non-const global variable : external linkage
+static non-const global variable : internal linkage
+           const global variable : internal linkage
+       constexpr global variable : internal linkage
+     external constexpr variable : external variable NOT available at compile time
+                 inline variable : external linkage
+                       functions : external linkage
+                static functions : internal linkage
+
+#6.12
+avoid "using directives" especially "using namespace std;"
+   => exception : "using namespace std::literals" to access "s" & "sv" literal suffixes
+
+#6.14
+    #include <type_traits>
+    bool std::is_constant_evaluated();
+
+    constexpr vs. consteval

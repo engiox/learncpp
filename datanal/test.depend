@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1396594586 source:c:\users\001\desktop\박상준\log\test\main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<sstream>
+	<string>
+	<stdlib.h>
+	"calc.h"
+	"frontend.h"
+
+1396410319 source:c:\users\001\desktop\박상준\log\test\calc.cpp
+	<vector>
+	<cmath>
+
+1396591907 source:c:\users\001\desktop\박상준\log\test\frontend.cpp
+	<vector>
+	<string>
+	<dirent.h>
+	<algorithm>
+	<fstream>
+	<sstream>
+	<iostream>
+	<iomanip>
+	"frontend.h"
+
+1396409909 c:\users\001\desktop\박상준\log\test\calc.h
+	<vector>
+
+1396516673 c:\users\001\desktop\박상준\log\test\frontend.h
+	<vector>
+	<string>
+

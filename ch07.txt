@@ -1,0 +1,81 @@
+if (init-statement_optional condition) statement-true
+    statement-true is considered in an implicit block
+
+
+The [[fallthrough]] attribute (C++17) : indicates intentional fallthrough of switch-case
+    ...
+    case 2:
+        std::cout << 2 << '\n';
+        [[fallthrough]];
+    case 3:
+    ...
+
+With if statements, you can only have a single statement after the if-condition,
+and that statement is considered to be implicitly inside a block
+
+However, with switch statements, the statements after labels are all scoped to the the switch block.
+No implicit blocks are created.
+
+All statements inside the switch are considered to be part of the same scope.
+Variables definitions and assignments are allowed, but initializations are NOT!(EXCEPT the last case)
+
+If defining variables used in a case statement, do so in a block inside the case.
+    case 45:
+    {
+        int x{ 4 };
+        std::cout << x;
+        break;
+    }
+
+One notable exception is when you need to exit a nested loop but not the entire function
+    -- in such a case, a goto to just beyond the loops is probably the cleanest solution.
+
+#include <cstdlib>
+std::atexit(cleanup);
+std::exit(0);
+std::at_quick_exit();
+std::quick_exit();
+std::abort();     // useful than std::exit() during debug, because it keeps variables in stack
+std::terminate();   // used with "exception"s : by default, std::terminate() calls std::abort()
+
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+std::cin.clear();
+
+#include <cassert>
+assert(expression);     // if macro NDEBUG is defined, "assert" macro gets diabled
+                        // clang++ : -D<macro>=<value>, --D<arg>, /D<arg>, -D<arg>
+                        // --define-macro <arg>, --define-macro=<arg>
+
+static_assert(condition, diagnostic_message)    // static_assert is a KEYWORD
+
+Pseudo Random Number Generators
+* Non-Cryptographic PRNG
+    - Xoshiro family    : https://prng.di.unimi.it/
+    - Wyrand            : https://github.com/wangyi-fudan/wyhash
+* Cryptographic (non-predictable)
+    - Cacha family      : https://cr.yp.to/chacha.html
+
+****** SEEDING with SYSTEM CLOCK ******
+
+#include <random>
+#include <chrono>
+
+std::mt19937 mt{ static_cast<unsigned int>( std::chrono::steady_clock::now().time_since_epoch().count() ) };
+std::uniform_int_distribution die6{ 1, 6 };
+
+for (int i{0}; i < 100; ++i)
+    std::cout << die6(mt);
+
+std::chrono::high_resolution_clock : user CAN modify  (roll back)
+std::chrono::steady_clock          : user CANNOT modify
+
+****** SEEDING with RANDOM DEVICE ******
+
+#include <random>
+
+std::mt19937 mt{ std::random_device{}() };
+std::uniform_int_distribution die6{ 1, 6 };
+
+random_value = die6(mt);
+

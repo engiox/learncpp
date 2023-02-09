@@ -1,0 +1,42 @@
+10.1 — Introduction to program-defined (user-defined) types
+
+WARNING
+Don’t forget to end your type definitions with a semicolon,
+otherwise the compiler will typically error on the next line of code.
+
+BEST PRACTICE
+Name your program-defined types starting with a capital letter and do not use a suffix.
+
+BEST PRACTICE
+
+A program-defined type used in only one code file should be defined in that code file as close to the first point of use as possible.
+A program-defined type used in multiple code files should be defined in a header file with the same name as the program-defined type and then #included into each code file as needed.
+
+WARNING
+Enumerations don’t have to be named, but unnamed enumerations should be avoided in modern C++.
+
+BEST PRACTICE
+Name your enumerated types starting with a capital letter. Name your enumerators starting with a lower case letter.
+
+BEST PRACTICE
+Prefer putting your enumerations inside a named scope region (such as a namespace or class) so the enumerators don't pollute the global namespace.
+
+BEST PRACTICE
+Avoid assigning explicit values to your enumerators unless you have a compelling reason to do so.
+
+BEST PRACTICE
+Specify the base type of an enumeration only when necessary.
+    enum Color : std::uint8_t
+    {
+        black,
+        red,
+        blue,
+    };
+
+BEST PRACTICE
+When adding a new member to an aggregate, it’s safest to add it to the bottom of the definition list so the initializers for other members don’t shift.
+
+BEST PRACTICE
+If no explicit initializer values will be provided for an aggregate, prefer value initialization (with an empty braces initializer) to default initialization (with no braces).
+
+
