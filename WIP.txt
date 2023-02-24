@@ -1,1 +1,1 @@
-12.7 - Introduction to lambdas (anonymous functions)
+12.8 - Lambda captures : Default captures
