@@ -1,0 +1,24 @@
+13.8 - OVERLAPPING AND DELEGATING CONSTRUCTORS
+
+DELEGATING CONSTRUCTORS
+
+Constructors are allowed to call other constructors from the same class. This process is called delegating constructors (or constructor chaining).
+
+To have one constructor call another, simply call the constructor in the member initializer list. This is one case where calling another constructor directly is acceptable.
+
+13.11 - CLASS CODE AND HEADER FILES
+
+DEFINING MEMBER FUNCTIONS OUTSIDE THE CLASS DEFINITION
+
+PUTTING CLASS DEFINITIONS IN A HEADER FILE
+
+DOESN’T DEFINING A CLASS IN A HEADER FILE VIOLATE THE ONE-DEFINITION RULE?
+
+It shouldn’t with your header guards.
+Types (which include classes), are exempt from the part of the one-definition rule that says you can only have one definition per program. Therefore, there isn’t an issue #including class definitions into multiple code files (if there was, classes wouldn’t be of much use).
+
+DOESN’T DEFINING MEMBER FUNCTIONS IN THE HEADER VIOLATE THE ONE-DEFINITION RULE?
+
+It depends. Member functions defined inside the class definition are considered implicitly inline. Inline functions are exempt from the one definition per program part of the one-definition rule. This means there is no problem defining trivial member functions (such as access functions) inside the class definition itself.
+
+Member functions defined outside the class definition are treated like normal functions, and are subject to the one definition per program part of the one-definition rule. Therefore, those functions should be defined in a code file, not inside the header. One exception is for template functions, which are also implicitly inline.
