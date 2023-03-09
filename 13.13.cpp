@@ -8,17 +8,23 @@ class Something
 public:
     Something(): m_id{ s_idGenerator++ } {}
     int getID() const { return m_id; }
+    static int getSID() { return s_idGenerator; }
 };
 
 int main()
 {
+    std::cout << "SID: " << Something::getSID() << '\n';
+
     Something first;
     Something second;
     Something third;
+    std::cout << "instantiated\n";
+    std::cout << "SID: " << Something::getSID() << '\n';
 
-    std::cout << first.getID() << '\n';
-    std::cout << second.getID() << '\n';
-    std::cout << third.getID() << '\n';
+    std::cout << "firstID: " << first.getID() << '\n';
+    std::cout << "secondID: " << second.getID() << '\n';
+    std::cout << "thirdID: " << third.getID() << '\n';
+    std::cout << "SID: " << Something::getSID() << '\n';
 
     return 0;
 }
