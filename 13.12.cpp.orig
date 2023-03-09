@@ -1,0 +1,24 @@
+#include <iostream>
+
+class Something
+{
+        int m_value{};
+    public:
+        Something(int val = 0): m_value{ val } {}
+        void setValue(int val) {m_value = val;}
+        int getValue() const {return m_value;}
+};
+
+
+int main()
+{
+    const Something something{};
+
+    const Something st{1};
+//    something.m_value = 5;
+//    something.setValue(5);
+
+    std::cout << something.getValue();
+
+    return 0;
+}

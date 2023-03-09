@@ -22,3 +22,16 @@ DOESN’T DEFINING MEMBER FUNCTIONS IN THE HEADER VIOLATE THE ONE-DEFINITION RUL
 It depends. Member functions defined inside the class definition are considered implicitly inline. Inline functions are exempt from the one definition per program part of the one-definition rule. This means there is no problem defining trivial member functions (such as access functions) inside the class definition itself.
 
 Member functions defined outside the class definition are treated like normal functions, and are subject to the one definition per program part of the one-definition rule. Therefore, those functions should be defined in a code file, not inside the header. One exception is for template functions, which are also implicitly inline.
+
+13.12 - CONST CLASS OBJECTS AND MEMBER FUNCTIONS
+
+BEST PRACTIVE
+Make any member function that does not modify the state of the class object const, so that it can be called by const objects.
+
+13.13 - STATIC MEMBER VARIABLE AND MEMBER FUNCTIONS
+
+Access static members by class name (using the scope resolution operator) rather than through an object of the class (using the member selection operator).
+
+When we declare a static member variable inside a class, we’re telling the compiler about the existence of a static member variable, but not actually defining it (much like a forward declaration). Because static member variables are not part of the individual class objects (they are treated similarly to global variables, and get initialized when the program starts), you must explicitly define the static member outside of the class, in the global scope.
+
+
