@@ -24,19 +24,19 @@ int main()
     std::vector<int> vInt2{[]()
         {
             std::vector<int> v2;
-            for (int i{0}; i < 100; ++i) {
-                v2.push_back(i);
+            for (int i{0}; i < 10; ++i) {
+                v2.push_back(i*i);
             }
             return v2;
         }() };
 
-    for (auto idx:vInt1) {
-        std::cout << vInt1[idx] << ' ';
+    for (auto elem:vInt1) {
+        std::cout << elem << ' ';
     }
     std::cout << '\n';
 
-    for (auto idx:vInt2) {
-        std::cout << vInt2[idx] << ' ';
+    for (auto elem:vInt2) {
+        std::cout << elem << ' ';
     }
     std::cout << '\n';
 
