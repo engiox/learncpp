@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <string_view>
+#include <array>
+#include "Random.h"
 
 class Monster
 {
@@ -42,9 +44,27 @@ public:
     }
 };
 
+namespace MonsterGenerator
+{
+    Monster generateMonster()
+    {
+        Monster::Type type{static_cast<Monster::Type>(Random::get(0, Monster::max_monster_types))};
+        int hp{Random::get(1, 100)};
+        static constexpr std::array s_name{"Blarg", "Moog", "Pksh", "Tyrn", "Mort", "Hans"};
+        static constexpr std::array s_roar{"*ROAR*", "*peep*", "*squeal*", "*whine*", "*hum*", "*burp*"};
+        auto name{s_name[Random::get(0, static_cast<int>(s_name.size()-1))]};
+        auto roar{s_roar[Random::get(0, static_cast<int>(s_roar.size()-1))]};
+        return Monster{type, name, roar, hp};
+    }
+}
+
 int main()
 {
 	Monster skeleton{ Monster::Type::Skeleton, "Bones", "*rattle*", 4 };
 	skeleton.print();
+
+    Monster m{MonsterGenerator::generateMonster()};
+    m.print();
+
     return 0;
 }

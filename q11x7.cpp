@@ -110,7 +110,7 @@ int getCardValue(const Card &cd)
 
 bool playBlackjack(const std::array<Card, 52> &deck)
 {
-    int dealerScore{0}, playerScore{0};
+    int dealerScore{0}, playerScore{0}, index{0};
 
     return true;
 }
@@ -119,6 +119,7 @@ int main()
 {
     auto deck{createDeck()};
 
+    printDeck(deck);
     shuffleDeck(deck);
     printDeck(deck);
 
