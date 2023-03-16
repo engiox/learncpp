@@ -73,9 +73,9 @@ std::array<Card, 52> createDeck()
 
 void printDeck(const std::array<Card, 52> &deck)
 {
-    for (const auto &card : deck) {
+    for (int i = 0;const auto &card : deck) {
         printCard(card);
-        std::cout << ' ';
+        std::cout << (++i % 13 ? ' ' : '\n');
     }
     std::cout << '\n';
 }
@@ -110,7 +110,74 @@ int getCardValue(const Card &cd)
 
 bool playBlackjack(const std::array<Card, 52> &deck)
 {
-    int dealerScore{0}, playerScore{0}, index{0};
+    int dealerScore{0}, playerScore{0};
+    unsigned index{0};
+
+    std::cout << "Player got: "; printCard(deck[0]);
+    std::cout << ", "; printCard(deck[1]); std::cout << '\n';
+    playerScore += getCardValue(deck[0]) + getCardValue(deck[1]);
+    if (playerScore > 21) playerScore -= 10;
+//    std::cout << "... Score: " << getCardValue(deck[0]) +
+//                                  getCardValue(deck[1]) << '\n';
+
+    std::cout << "Dealer got: "; printCard(deck[2]);
+    std::cout << ", **"; printCard(deck[3]); std::cout << '\n';
+//    std::cout << "... Score: " << getCardValue(deck[2]) << '\n';
+
+    index = 4;
+
+    while (true) {
+        std::cout << "Player score: " << playerScore << '\n';
+        if (playerScore > 21) {
+            std::cout << "Dealer win!\n";
+            return false;
+        }
+        std::cout << "... Hit or Stand? (H or S)\n";
+        char ans{};
+        std::cin >> ans;
+
+        if (ans == 'S')
+            break;
+        else if (ans == 'H') {
+            std::cout << "Player got: "; printCard(deck[index]); std::cout << '\n';
+            if (getCardValue(deck[index]) == 11 && (playerScore >= 11))
+                playerScore += 1;
+            else {
+                playerScore += getCardValue(deck[index]);
+                ++index;
+                continue;
+            }
+        } else {
+            std::cout << "Try Again!\n";
+            continue;
+        }
+    }
+
+    std::cout << "Dealer got: "; printCard(deck[2]);
+    std::cout << ", "; printCard(deck[3]); std::cout << '\n';
+    dealerScore += getCardValue(deck[2]) + getCardValue(deck[3]);
+    if (dealerScore > 21) dealerScore -= 10;
+
+    while (true) {
+        std::cout << "Dealer score: " << dealerScore << '\n';
+        if ((dealerScore > 21) ||
+            (dealerScore >= 17 && dealerScore < playerScore)) {
+            std::cout << "Player win!\n";
+            return true;
+        }
+        if (dealerScore >= 17 || (dealerScore > playerScore)) {
+            std::cout << "Dealer win!\n";
+            return false;
+        }
+        std::cout << "Dealer got: "; printCard(deck[index]); std::cout << '\n';
+        if (getCardValue(deck[index]) == 11 && (dealerScore >= 11))
+            dealerScore += 1;
+        else {
+            dealerScore += getCardValue(deck[index]);
+            ++index;
+            continue;
+        }
+    }
 
     return true;
 }
@@ -122,6 +189,8 @@ int main()
     printDeck(deck);
     shuffleDeck(deck);
     printDeck(deck);
+
+    playBlackjack(deck);
 
     return 0;
 }

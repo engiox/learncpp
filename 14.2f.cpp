@@ -1,4 +1,6 @@
+#include <ios>
 #include <iostream>
+#include <limits>
 #include <numeric>
 #include "Fraction.h"
 
@@ -36,12 +38,15 @@ Fraction &Fraction::reduce()
 
 std::ostream &operator<<(std::ostream &out, const Fraction &fr)
 {
-    out << fr.m_numerator << '/' << fr.m_denominator << '\n';
+    out << fr.m_numerator << '/' << fr.m_denominator ;
     return out;
 }
 
 std::istream &operator>>(std::istream &in, Fraction &fr)
 {
-    in >> fr.m_numerator; in >> fr.m_denominator;
+    in >> fr.m_numerator;
+    in.ignore(std::numeric_limits<std::streamsize>::max(), '/');
+    in >> fr.m_denominator;
+
     return in;
 }
