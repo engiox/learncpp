@@ -50,3 +50,34 @@ std::istream &operator>>(std::istream &in, Fraction &fr)
 
     return in;
 }
+
+bool operator==(const Fraction &f1, const Fraction &f2)
+{
+    return (f1.m_numerator == f2.m_numerator && f1.m_denominator == f2.m_denominator);
+}
+
+bool operator<(const Fraction &f1, const Fraction &f2)
+{
+    return (f1.m_numerator * f2.m_denominator < f2.m_numerator * f1.m_denominator);
+}
+
+bool operator!=(const Fraction &f1, const Fraction &f2)
+{
+    return !(f1 == f2);
+}
+
+bool operator>(const Fraction &f1, const Fraction &f2)
+{
+    return (f2 < f1);
+}
+
+bool operator<=(const Fraction &f1, const Fraction &f2)
+{
+    return !(f1 > f2);
+}
+
+bool operator>=(const Fraction &f1, const Fraction &f2)
+{
+    return !(f1 < f2);
+}
+

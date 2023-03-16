@@ -16,6 +16,12 @@ public:
     friend Fraction operator*(int inum, const Fraction &f1); // { return f1 * inum; }
     friend std::ostream &operator<<(std::ostream &out, const Fraction &fr);
     friend std::istream &operator>>(std::istream &in, Fraction &fr);
+    friend bool operator==(const Fraction &f1, const Fraction &f2);
+    friend bool operator!=(const Fraction &f1, const Fraction &f2);
+    friend bool operator<(const Fraction &f1, const Fraction &f2);
+    friend bool operator>(const Fraction &f1, const Fraction &f2);
+    friend bool operator<=(const Fraction &f1, const Fraction &f2);
+    friend bool operator>=(const Fraction &f1, const Fraction &f2);
 };
 
 #endif
