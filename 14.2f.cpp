@@ -2,11 +2,28 @@
 #include <iostream>
 #include <limits>
 #include <numeric>
+#include <cassert>
 #include "Fraction.h"
 
 Fraction::Fraction(int num, int den) : m_numerator{num}, m_denominator{den}
 {
+    assert(m_denominator != 0 && "Constructor: divided by zero!\n");
     reduce();
+}
+
+Fraction::Fraction(const Fraction& fr) : m_numerator{ fr.m_numerator }, m_denominator{ fr.m_denominator }
+{
+    std::cout << "Copy constructor called\n";
+}
+
+void Fraction::setNumerator(int num)
+{
+    m_numerator = num;
+}
+
+int Fraction::getNumerator()
+{
+    return m_numerator;
 }
 
 void Fraction::print()

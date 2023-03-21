@@ -9,6 +9,9 @@ class Fraction
     int m_denominator{1};
 public:
     Fraction(int num = 0, int den = 1); // : m_numerator{num}, m_denominator{den} {}
+    Fraction(const Fraction& fr);
+    void setNumerator(int num);
+    int getNumerator();
     void print();
     Fraction &reduce();
     friend Fraction operator*(const Fraction &f1, const Fraction &f2);
