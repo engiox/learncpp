@@ -16,6 +16,13 @@ Fraction::Fraction(const Fraction& fr) : m_numerator{ fr.m_numerator }, m_denomi
     std::cout << "Copy constructor called\n";
 }
 
+Fraction& Fraction::operator=(const Fraction& fr)
+{
+    m_numerator = fr.m_numerator;
+    m_denominator = fr.m_denominator;
+    return *this;
+}
+
 void Fraction::setNumerator(int num)
 {
     m_numerator = num;

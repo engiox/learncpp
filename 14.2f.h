@@ -14,6 +14,7 @@ public:
     int getNumerator();
     void print();
     Fraction &reduce();
+    Fraction& operator=(const Fraction& fr);
     friend Fraction operator*(const Fraction &f1, const Fraction &f2);
     friend Fraction operator*(const Fraction &f1, int inum);
     friend Fraction operator*(int inum, const Fraction &f1); // { return f1 * inum; }
