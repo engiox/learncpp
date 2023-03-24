@@ -4,48 +4,59 @@
 
 class IntArray
 {
-    int* m_pIA{ nullptr };
-    size_t  m_size{ 0 };
+    int* m_piArray{nullptr};
+    int  m_iLength{0};
 
-public:
-    IntArray(size_t sz) : m_size{ sz }
+    void deepDupe(IntArray& tgt, const IntArray& src)
     {
-        assert(sz > 0 && "Constructor with no element!\n");
-        if (sz) {
-            m_pIA = new int[static_cast<size_t>(sz)] {};
+        tgt.m_iLength = src.m_iLength;
+
+        if (tgt.m_piArray) delete[] tgt.m_piArray;
+
+        tgt.m_piArray = new int[static_cast<size_t>(tgt.m_iLength)];
+
+        for (int i{0}; i < src.m_iLength; ++i) {
+            tgt.m_piArray[i] = src.m_piArray[i];
         }
     }
 
-    IntArray(const IntArray& src) : m_size{ src.m_size }
+public:
+    explicit IntArray(int length) : m_iLength{ length }
     {
-        if (this != &src) {
-            delete[] m_pIA;
+        assert( length > 0 && "Array has no element!\n" );
+        m_piArray = new int[static_cast<size_t>(m_iLength)]{};
+    }
 
-            m_pIA = new int[src.m_size]{};
-            for (size_t idx{0}; idx < m_size; ++idx) {
-                m_pIA[idx] = src.m_pIA[idx];
-            }
-        }
+    IntArray(const IntArray& src) : m_iLength{ src.m_iLength }
+    {
+        deepDupe(*this, src);
     }
 
     ~IntArray()
     {
-        delete[] m_pIA;
+        delete[] m_piArray;
     }
 
-    int& operator[](const size_t idx)
+    IntArray& operator=(const IntArray& src)
     {
-        assert( (idx < m_size) && "Index out of range!\n" );
-        assert( m_pIA && "Indexing with nullpointer!\n" );
-        return m_pIA[idx];
+        if (this != &src) deepDupe(*this, src);
+
+        return *this;
     }
 
-    friend std::ostream& operator<<(std::ostream& ostr, const IntArray& iArr)
+    int& operator[](const int index)
     {
-        for (size_t sz{0}; sz < iArr.m_size; ++sz) {
-            ostr << iArr.m_pIA[sz] << ' ';
+        assert( index >= 0 && "Negative index!\n" );
+        assert( index < m_iLength && "Out of range!\n");
+        return m_piArray[index];
+    }
+
+    friend std::ostream& operator<<(std::ostream& out, const IntArray& iArr)
+    {
+        for (int i{0}; i < iArr.m_iLength; ++i) {
+            out << iArr.m_piArray[i] << ' ';
         }
-        return ostr;
+        return out;
     }
 };
 
@@ -62,10 +73,15 @@ IntArray fillArray()
 	return a;
 }
 
+void test()
+{
+}
+
 int main()
 {
+    test();
+
 	IntArray a{ fillArray() };
-    std::cout << "a @ " <<  &a << ": ";
 	std::cout << a << '\n';
 
 	auto& ref{ a }; // we're using this reference to avoid compiler self-assignment errors
@@ -74,7 +90,6 @@ int main()
 	IntArray b(1);
 	b = a;
 
-    std::cout << "b @ " <<  &b << ": ";
 	std::cout << b << '\n';
 
 	return 0;
