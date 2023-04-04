@@ -12,7 +12,6 @@ class Tile
     int m_num{};
 public:
     Tile() = default;
-
     explicit Tile(int num) : m_num{ num }
     {
         assert( m_num >= 0 && m_num <= 15 && "Tile number out of range\n");
@@ -53,12 +52,19 @@ public:
     Board()
     {
         for (size_t i{0}; i < tiles.size(); ++i) {
-            tiles.at(i).setNum((i + 1) % 16);
+            tiles[i].setNum( (i + 1) % 16 );
         }
     }
 
     friend std::ostream& operator<<(std::ostream& out, const Board& board)
     {
+        for (int i{0}; i < g_consoleLines; ++i)
+            std::cout << '\n';
+
+        for (size_t i{0}; i < board.tiles.size(); ++i) {
+            std::cout << board.tiles.at(i);
+            std::cout << ((i + 1)%4 ? "" : "\n");
+        }
         return out;
     }
 };
