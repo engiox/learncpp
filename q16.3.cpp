@@ -1,11 +1,46 @@
 #include <iostream>
 #include <functional>
+#include <ostream>
 #include <string>
 #include <vector>
 
-
-
 // Update the Department/Teacher example so the Department can handle multiple Teachers.
+
+class Teacher
+{
+    std::string m_name{};
+
+public:
+    Teacher(const std::string& name) : m_name{ name } {}
+
+    const std::string& getName() const
+    {
+        return m_name;
+    }
+};
+
+class Department
+{
+    std::vector<std::reference_wrapper<const Teacher>> m_teachers{};
+
+public:
+    Department() = default;
+
+    void add(const Teacher& teacher)
+    {
+        m_teachers.push_back(teacher);
+    }
+
+    friend std::ostream& operator<<(std::ostream& out, const Department& dept)
+    {
+        out << "Department: ";
+        for (const auto& mem : dept.m_teachers) {
+            out << mem.get().getName() << ' ';
+        }
+        out << '\n';
+        return out;
+    }
+};
 
 int main()
 {
