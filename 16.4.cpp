@@ -87,7 +87,19 @@ class CarLot
 
 public:
     CarLot() = delete;
+    Car* getCar(int id)
+    {
+        for (int i{0}; i < 4; ++i) {
+            if (id == s_carLot[i].getID())
+                return &(s_carLot[i]);
+        }
+    return nullptr;
+    }
 };
+
+Car CarLot::s_carLot[4]{ { "Prius", 4 }, { "Corolla", 17 }, { "Accord", 84 }, { "Matrix", 62 } };
+
+
 
 void p1()
 {
