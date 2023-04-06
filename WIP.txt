@@ -1,1 +1,1 @@
-16.4 - Association
+16.4 - Association : Associations can be indirect

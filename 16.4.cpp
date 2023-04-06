@@ -71,7 +71,25 @@ std::ostream& operator<<(std::ostream& out, const Patient& patient)
     return out;
 }
 
-int main()
+class Car
+{
+    std::string m_name{};
+    int m_id{};
+public:
+    Car(const std::string& name, int id) : m_name{ name }, m_id{ id } {}
+    const std::string& getName() const { return m_name; }
+    int getID() const { return m_id; }
+};
+
+class CarLot
+{
+    static Car s_carLot[4];
+
+public:
+    CarLot() = delete;
+};
+
+void p1()
 {
 	// Create a Patient outside the scope of the Doctor
 	Patient dave{ "Dave" };
@@ -91,6 +109,16 @@ int main()
 	std::cout << dave << '\n';
 	std::cout << frank << '\n';
 	std::cout << betsy << '\n';
+}
+
+void p2()
+{
+}
+
+int main()
+{
+    p1();
+    p2();
 
 	return 0;
 }
