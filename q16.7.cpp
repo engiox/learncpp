@@ -13,8 +13,9 @@ public:
 
 	IntArray(int length)
 		: m_length{ length }
-		, m_data{ new int[static_cast<size_t>(length)] {} }
+		, m_data{ new int[length] {} }
 	{
+
 	}
 
 	IntArray(std::initializer_list<int> list) // allow IntArray to be initialized via list initialization
@@ -34,21 +35,20 @@ public:
 		delete[] m_data;
 	}
 
-//	IntArray(const IntArray&) = delete; // to avoid shallow copies
-    IntArray(const IntArray& src) : m_length{ src.m_length }, m_data{ new int[m_length] }
+	IntArray(const IntArray&) = delete; // to avoid shallow copies
+	IntArray& operator=(const IntArray& list) = delete; // to avoid shallow copies
+
+    IntArray& operator=(const std::initializer_list<int> list)
     {
-        for (int i{0}; i < m_length; ++i) {
-            m_data[i] = src.m_data[i];
+        if (m_length != static_cast<int>(list.size())) {
+            m_length = list.size();
+            delete[] m_data;
+            m_data = new int[m_length];
         }
-    }
-//	IntArray& operator=(const IntArray& list) = delete; // to avoid shallow copies
-    IntArray& operator=(const IntArray& list)
-    {
-        delete[] m_data;
-        m_length = list.m_length;
-        m_data = new int[list.m_length];
-        for (int i{0}; i < m_length; ++i) {
-            m_data[i] = list.m_data[i];
+        int index{0};
+        for (auto elem : list) {
+            m_data[index] = elem;
+            ++index;
         }
         return *this;
     }
@@ -64,11 +64,18 @@ public:
 
 int main()
 {
-	IntArray array{};
-	array = { 1, 3, 5, 7, 9, 11 }; // Here's our list assignment statement
+	IntArray array { 5, 4, 3, 2, 1 }; // initializer list
+	for (int count{ 0 }; count < array.getLength(); ++count)
+		std::cout << array[count] << ' ';
+
+	std::cout << '\n';
+
+	array = { 1, 3, 5, 7, 9, 11 };
 
 	for (int count{ 0 }; count < array.getLength(); ++count)
 		std::cout << array[count] << ' ';
+
+	std::cout << '\n';
 
 	return 0;
 }
