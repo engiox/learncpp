@@ -2,19 +2,24 @@
 #define _INTARRAY_H_
 
 #include <cassert>
+#include <initializer_list>
 
 class IntArray
 {
-    int m_length{};
-    int* m_data{};
+    int m_length{ 0 };
+    int* m_data{ nullptr };
+    void allocate(int allocSize);
+    void copyFrom(const IntArray& src, int iBegin, int iEnd);
 
 public:
     IntArray() = default;
     IntArray(int size);
+    IntArray(std::initializer_list<int> list);
     ~IntArray();
     void erase();
     int& operator[](int index);
-    int getLength();
+    int& operator[](int index) const;
+    int getLength() const;
     void reallocate(int newSize);   // destroy existing elements
     void resize(int newSize);       // keep existing elements
     IntArray(const IntArray& src);
