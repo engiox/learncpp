@@ -1,1 +1,1 @@
-16.4 - Association : Associations can be indirect
+17.8 - Hiding inherited functionality : Hiding functionality
