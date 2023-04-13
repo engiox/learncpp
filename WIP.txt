@@ -1,1 +1,2 @@
-17.8 - Hiding inherited functionality : Hiding functionality
+17.x - Chapter 17 comprehensive quiz : e)
+       with 7.19 Generating random numbers : seed_seq
