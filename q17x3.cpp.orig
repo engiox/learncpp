@@ -62,15 +62,8 @@ public:
 
     static Type getRandomMonster()
     {
-        return static_cast<Type>(Random::get(0, static_cast<int>(Type::max_types)));
+        return static_cast<Type>(Random::get(0, 2));
     }
-
-//    static Monster getRandomMonster()
-//    {
-//        int num{ Random::get(0, static_cast<int>(Type::max_types) - 1) };
-//        return Monster{ static_cast<Type>(num) };
-//    }
-  
 };
 
 int main()
