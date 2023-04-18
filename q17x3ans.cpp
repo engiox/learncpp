@@ -25,7 +25,7 @@ public:
     int getGold() const { return m_gold; }
 
     void reduceHealth(int dmg) { m_health -= dmg; }
-    bool isDead() { return m_health <= 0; }
+    bool isDead() const { return m_health <= 0; }
     void addGold(int amt) { m_gold += amt; }
 };
 
@@ -68,6 +68,8 @@ public:
 
 void attackMonster(Player& player, Monster& monster)
 {
+    if (player.isDead())
+        return;
     monster.reduceHealth(player.getDPAttack());
     std::cout << "You hit the " << monster.getName()
               << " for " << player.getDPAttack() << " damage.\n";
@@ -83,6 +85,8 @@ void attackMonster(Player& player, Monster& monster)
 
 void attackPlayer(Player& player, const Monster& monster)
 {
+    if (monster.isDead() )
+        return;
     player.reduceHealth(monster.getDPAttack());
     std::cout << "The " << monster.getName() << " hit you for "
               << monster.getDPAttack() << " damage.\n";
@@ -105,18 +109,18 @@ void fightMonster(Player& player)
         char choice;
         std::cin >> choice;
 
-        if ((choice == 'r' || choice == 'R') && Random::get(0, 1)) {
-            std::cout << "You successfully fled.\n";
-            return;
-        } else {
-            std::cout << "You failed to flee.\n";
-            attackPlayer(player, rMonster);
-            if (player.isDead())
+        if (choice == 'r' || choice == 'R') {
+            if (Random::get(0, 1)) {
+                std::cout << "You successfully fled.\n";
                 return;
-            continue;
-        }
-
-        if (choice == 'f' || choice == 'F') {
+            } else {
+                std::cout << "You failed to flee.\n";
+                attackPlayer(player, rMonster);
+                if (player.isDead())
+                    return;
+                continue;
+            }
+        } else if (choice == 'f' || choice == 'F') {
             attackMonster(player, rMonster);
             attackPlayer(player, rMonster);
         }
