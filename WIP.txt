@@ -1,2 +1,1 @@
-17.x - Chapter 17 comprehensive quiz : e)
-       with 7.19 Generating random numbers : Random numbers across multiple functions or files (Random.h)
+18.6 - The virtual table
