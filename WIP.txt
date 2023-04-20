@@ -1,1 +1,1 @@
-18.6 - The virtual table
+18.9 - Object slicing
