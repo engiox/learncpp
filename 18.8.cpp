@@ -29,7 +29,7 @@ public:
     }
 };
 
-class Copier: public Scanner, public Printer
+class Copier: public Scanner, public Printer // , public PowerrDevice
 {
 public:
     Copier(int scanner, int printer, int power)
