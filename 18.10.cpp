@@ -2,6 +2,12 @@
 #include <string>
 #include <string_view>
 
+enum class ClassID
+{
+    base,
+    derived
+};
+
 class Base
 {
 protected:
@@ -10,6 +16,7 @@ protected:
 public:
     Base(int val) : m_value{ val } {}
     virtual ~Base() = default;
+    virtual ClassID getClassID() const { return ClassID::base; }
 };
 
 class Derived : public Base
@@ -21,6 +28,7 @@ public:
     Derived(int val, std::string_view name)
         : Base{ val }, m_name{ name } {}
     const std::string& getName() { return m_name; }
+    virtual ClassID getClassID() const { return ClassID::derived; }
 };
 
 Base* getObject(bool returnDerived)
@@ -49,12 +57,12 @@ int main()
                 gD = false;
                 break;
         }
+        if (ch == 'q' || ch == 'Q')
+            break;
         b = getObject(gD);
         std::cout << "getDerived: " << (gD ? "true" : "false") << '\n';
         std::cout << "static_cast: " << static_cast<Derived*>(b) << '\n';
         std::cout << "dynamic_cast: " << dynamic_cast<Derived*>(b) << '\n';
-        if (ch == 'q' || ch == 'Q')
-            break;
     } while (true);
 
     delete b;
