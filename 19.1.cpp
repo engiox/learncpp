@@ -3,7 +3,7 @@
 
 int main()
 {
-	const int length { 12 };
+	int length { 12 };
 	Array<int> intArray { length };
 	Array<double> doubleArray { length };
 

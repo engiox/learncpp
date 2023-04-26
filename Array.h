@@ -17,6 +17,6 @@ public:
     int getLength() const;
 };
 
-#include "Array.inl"
+//#include "Array.inl"
 
 #endif
