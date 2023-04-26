@@ -110,3 +110,4 @@ nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <F9> :YcmCompleter FixIt<CR>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
+autocmd BufWritePre *.py :%s/\s\+$//e   " delete trailing whitespaces

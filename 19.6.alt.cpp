@@ -22,24 +22,30 @@ public:
 };
 
 template <>
-class Storage<char*>
+Storage<char*>::Storage(char* szVal)
 {
-    char* m_value{};
-public:
-    Storage(char* const szValue) {
-        int strLen{0};
-        while (szValue[strLen] != '\0') {
-            ++strLen;
-        }
-        ++strLen;
-        m_value = new char[strLen]{};
-        for (int i{0}; i < strLen; ++i) {
-            m_value[i] = szValue[i];
-        }
+    int szLen{0};
+    while (szVal[szLen] != '\0') {
+        ++szLen;
     }
-    ~Storage() { delete[] m_value; }
-    void print() const { std::cout << m_value; }
-};
+    ++szLen;
+    m_value = new char[szLen]{};
+    for (int i{0}; i < szLen; ++i) {
+        m_value[i] = szVal[i];
+    }
+}
+
+template <>
+Storage<char*>::~Storage()
+{
+    delete[] m_value;
+}
+
+template <>
+void Storage<char*>::print() const
+{
+    std::cout << m_value;
+}
 
 int main()
 {

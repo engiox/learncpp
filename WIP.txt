@@ -1,1 +1,1 @@
-19.6 - Partial template specialization : last section
+20.3 — Exceptions, functions, and stack unwinding
