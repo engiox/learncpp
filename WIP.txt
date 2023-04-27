@@ -1,1 +1,2 @@
-20.3 — Exceptions, functions, and stack unwinding
+20.5 — Exceptions, classes, and inheritance : When constructors fail
+

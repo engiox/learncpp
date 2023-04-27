@@ -5,14 +5,14 @@
 template <typename T>
 class Pair1
 {
-    T m_value1{}, m_value2{};
+    T m_val1{}, m_val2{};
 
 public:
-    Pair1(const T& val1, const T& val2) : m_value1{ val1 }, m_value2{ val2 } {}
-    T& first() { return m_value1; }
-    T& second() { return m_value2; }
-    const T& first() const { return m_value1; }
-    const T& second() const { return m_value2; }
+    Pair1(T v1, T v2) : m_val1{ v1 }, m_val2{ v2 } {}
+    T& first() { return m_val1; }
+    T& second() { return m_val2; }
+    const T& first() const { return m_val1; }
+    const T& second() const { return m_val2; }
 };
 
 void p1()
@@ -27,15 +27,15 @@ void p1()
 template <typename T1, typename T2>
 class Pair
 {
-    T1 m_value1{};
-    T2 m_value2{};
-
+    T1 m_val1{};
+    T2 m_val2{};
+ 
 public:
-    Pair(T1 value1, T2 value2) : m_value1{ value1 }, m_value2{ value2 } {}
-    T1& first() { return m_value1; }
-    T2& second() { return m_value2; }
-    const T1& first() const { return m_value1; }
-    const T2& second() const { return m_value2; }
+    Pair(T1 val1, T2 val2) : m_val1{ val1 }, m_val2{ val2 } {}
+    T1& first() { return m_val1; }
+    T2& second() { return m_val2; }
+    const T1& first() const { return m_val1; }
+    const T2& second() const { return m_val2; }
 };
 
 void p2()
@@ -51,8 +51,8 @@ template <typename T>
 class StringValuePair : public Pair<std::string, T>
 {
 public:
-    StringValuePair(std::string_view value1, T value2)
-        : Pair<std::string, T>{ static_cast<std::string>(value1), value2 } {}
+    StringValuePair(const std::string_view val1, const T& val2)
+        : Pair<std::string, T>{ static_cast<std::string>(val1), val2 } {}
 };
 
 void p3()
@@ -64,13 +64,13 @@ void p3()
 int main()
 {
     p1();
-    std::cout << "====== End of P1 ======\n";
+    std::cout << std::endl;
 
     p2();
-    std::cout << "====== End of P2 ======\n";
+    std::cout << std::endl;
 
     p3();
-    std::cout << "====== End of P3 ======\n";
+    std::cout << std::endl;
 
 	return 0;
 }
