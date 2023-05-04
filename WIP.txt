@@ -1,3 +1,4 @@
 20.5 — Exceptions, classes, and inheritance : When constructors fail
 20.6 - Rethrowing exceptions
+20.9 - Exception specifications and noexcept : When to use noexcept
 
