@@ -2,3 +2,4 @@
 20.6 - Rethrowing exceptions
 20.9 - Exception specifications and noexcept : When to use noexcept
 M.2 - R-value references : R-value references
+M.3 - Move constructors and move assignment : Deleting the move constructor and move assignment
