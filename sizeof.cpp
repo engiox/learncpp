@@ -24,5 +24,11 @@ int main()
     std::cout << "string:\t\t" << sizeof(std::string) << " bytes\n";
     std::cout << "string_view:\t" << sizeof(std::string_view) << " bytes\n";
 
+    std::cout << "\nSize of int array? ";
+    int szint{};
+    std::cin >> szint;
+    int* arrInt{ new int[szint] };
+    std::cout << "sizeof *arrInt[] : " << sizeof(arrInt) << '\n';
+
     return 0;
 }
