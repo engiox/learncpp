@@ -64,8 +64,8 @@ int main()
     try
     {
         my_pair.second.m_throw = true;
-//        std::pair moved_pair{ std::move(my_pair) };
-        std::pair moved_pair{ std::move_if_noexcept(my_pair) };
+        std::pair moved_pair{ std::move(my_pair) };
+//        std::pair moved_pair{ std::move_if_noexcept(my_pair) };
         std::cout << "moved pair exists\n";
     }
     catch (const std::exception& ex)
