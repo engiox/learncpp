@@ -1,11 +1,16 @@
 #include <iostream>
 #include <memory>
+#include <ostream>
 
 class Resource
 {
 public:
     Resource() { std::cout << "Resource acquired\n"; }
     ~Resource() { std::cout << "Resource destroyed\n"; }
+    friend std::ostream& operator<<(std::ostream& os, const Resource& rsc) {
+        os << "I am a resource";
+        return os;
+    }
 };
 
 void p1()
@@ -50,10 +55,49 @@ void p2()
     std::cout << f4[0] << '\n';
 }
 
+auto createResource()
+{
+    return std::make_unique<Resource>();
+}
+
+void takeOwnership(std::unique_ptr<Resource> rsc)
+{
+    if (rsc)
+        std::cout << *rsc << '\n';
+}
+
+void p3()
+{
+    auto ptr{ std::make_unique<Resource>() };
+
+    takeOwnership(std::move(ptr));
+
+    std::cout << "Ending program\n";
+}
+
+void useResource(Resource* rsc)
+{
+    if (rsc)
+        std::cout << *rsc << '\n';
+    else
+        std::cout << "No resource\n";
+}
+
+void p4()
+{
+    auto ptr{ std::make_unique<Resource>() };
+    
+    useResource(ptr.get());
+    
+    std::cout << "Ending program\n";
+}
+
 int main()
 {
     p1();
     p2();
+    p3();
+    p4();
 
     return 0;
 }
