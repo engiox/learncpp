@@ -6,3 +6,4 @@ M.3 - Move constructors and move assignment : Deleting the move constructor and 
 M.5 - std::move_if_noexcept : The move constructors exception problem
 M.6 - std::unique_ptr : The exception safety ussue in more detail
 21.3 - STL iterators overview : Iterating through a vector
+23.2 - Input with istream
