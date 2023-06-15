@@ -41,6 +41,7 @@ public:
 int main()
 {
     Copier copier{ 1, 2, 3 };
+    Copier copier1{ 4, 5, 6 };
 
     return 0;
 }
