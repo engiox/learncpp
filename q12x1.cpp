@@ -1,8 +1,12 @@
 #include <iostream>
 
-double max(double a, double b) { return a > b ? a : b; }
+//double max(double a, double b) { return a > b ? a : b; }
+const double& max(const double& a, const double& b) { return a > b ? a : b; }
+
 void swap(int &a, int &b) { int tmp = b; b = a; a = tmp; }
-int &getLargestElement(int *arr, int length);
+
+int& getLargestElement(int *arr, int length);
+// define function body of getLargestElement()
 
 int main()
 {
