@@ -9,3 +9,6 @@ M.6 - std::unique_ptr : The exception safety ussue in more detail
 23.2 - Input with istream
 23.5 - Stream states and iput validation : String validation
 23.6 - Basic file I/O
+
+REVIEW
+17.x -Chapter 17 comprehensive quiz
