@@ -11,4 +11,4 @@ M.6 - std::unique_ptr : The exception safety ussue in more detail
 23.6 - Basic file I/O
 
 REVIEW
-17.x -Chapter 17 comprehensive quiz
+18.1 - Pointers and references to the base class of derived objects
