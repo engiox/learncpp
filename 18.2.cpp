@@ -19,14 +19,14 @@ class Cat : public Animal
 {
 public:
     Cat(const std::string_view name) : Animal{ name } {}
-    const std::string_view speak() const { return "Mew"; }
+    const std::string_view speak() const override { return "Mew"; }
 };
 
 class Dog : public Animal
 {
 public:
     Dog(const std::string_view name) : Animal{ name } {}
-    const std::string_view speak() const { return "Woof"; }
+    const std::string_view speak() const override { return "Woof"; }
 };
 
 void report(const Animal& anim)
