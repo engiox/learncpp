@@ -77,6 +77,6 @@
 def Settings( **kwargs ):
   return {
     'flags': [ '-x', 'c++', '-Wall', '-Wextra', '-Werror', '-Weffc++',
-               '-Wsign-conversion', '-Wno-unused-variable', '-Wc++17-extensions',
-               '-std=c++20' ],
+               '-Wsign-conversion', '-Wno-unused-variable', '-Wno-unused-parameter', 
+               '-Wc++17-extensions', '-std=c++20' ],
   }
