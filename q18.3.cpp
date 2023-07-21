@@ -5,11 +5,11 @@ class A
 public:
     void print()
     {
-        std::cout << "A";
+        std::cout << "print A; ";
     }
     virtual void vprint()
     {
-        std::cout << "A";
+        std::cout << "vprint A; ";
     }
 };
 class B : public A
@@ -17,11 +17,11 @@ class B : public A
 public:
     void print()
     {
-        std::cout << "B";
+        std::cout << "print B; ";
     }
     void vprint() override
     {
-        std::cout << "B";
+        std::cout << "vprint B; ";
     }
 };
 
@@ -34,6 +34,7 @@ private:
 public:
     virtual A& get()
     {
+        std::cout << "get A; ";
         return m_a;
     }
 };
@@ -46,6 +47,7 @@ private:
 public:
     B& get() override
     {
+        std::cout << "get B; ";
         return m_b;
     }
 };
@@ -68,6 +70,12 @@ int main()
     C& ref{ d };
     ref.get().print();
     ref.get().vprint();
+    std::cout << '\n';
+
+    // case 4
+    C& refs{ c };
+    refs.get().print();
+    refs.get().vprint();
     std::cout << '\n';
 
     return 0;
