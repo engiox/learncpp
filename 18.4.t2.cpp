@@ -3,7 +3,7 @@
 
 class Base
 {
-    char c{0};
+    void* c{reinterpret_cast<void*>(0xabcdefab)};
 public:
     virtual void function1() {};
     virtual void function2() {};
@@ -27,9 +27,15 @@ int main()
     D2 d2{};
 
     std::cout << "sizeof(Ba) : " << sizeof(b) << " @ " << reinterpret_cast<void*>(&b) << '\n';
-    std::cout << std::uppercase << std::hex << uintptr_t(&b) << '\n';
+    std::cout << std::hex << *(reinterpret_cast<int*>(&b)) << '\n';
+    std::cout << std::hex << *(reinterpret_cast<int*>(&b)+2) << '\n';
+//    std::cout << std::uppercase << std::hex << uintptr_t(&b) << '\n';
     std::cout << "sizeof(D1) : " << sizeof(d1) << " @ " << reinterpret_cast<void*>(&d1) << '\n';
+    std::cout << std::hex << *(reinterpret_cast<int*>(&d1)) << '\n';
+    std::cout << std::hex << *(reinterpret_cast<int*>(&d1)+2) << '\n';
     std::cout << "sizeof(D2) : " << sizeof(d2) << " @ " << reinterpret_cast<void*>(&d2) << '\n';
+    std::cout << std::hex << *(reinterpret_cast<int*>(&d2)) << '\n';
+    std::cout << std::hex << *(reinterpret_cast<int*>(&d2)+2) << '\n';
 
     return 0;
 }
