@@ -2,6 +2,10 @@
 #include <string>
 #include <string_view>
 
+struct dummyStruct
+{
+};
+
 int main()
 {
     std::cout << "bool:\t\t" << sizeof(bool) << " bytes\n";
@@ -23,6 +27,7 @@ int main()
     std::cout << "pointer:\t" << sizeof(int *) << " bytes\n";
     std::cout << "string:\t\t" << sizeof(std::string) << " bytes\n";
     std::cout << "string_view:\t" << sizeof(std::string_view) << " bytes\n";
+    std::cout << "dummy struct:\t" << sizeof(dummyStruct) << " bytes\n";
 
     std::cout << "\nSize of int array? ";
     int szint{};

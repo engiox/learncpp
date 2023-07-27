@@ -76,7 +76,8 @@
 ##################################################################
 def Settings( **kwargs ):
   return {
-    'flags': [ '-x', 'c++', '-Wall', '-Wextra', '-Werror', '-Weffc++',
-               '-Wsign-conversion', '-Wno-unused-variable', '-Wno-unused-parameter', 
+    'flags': [ '-x', 'c++', '-Wall', '-Wextra', '-Werror', '-Weffc++', '-Wsign-conversion',
+               '-Wno-unused-variable', '-Wno-unused-parameter', '-Wno-non-virtual-dtor',
+               '-Wno-unused-private-field',
                '-Wc++17-extensions', '-std=c++20' ],
   }
