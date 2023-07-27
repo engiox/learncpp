@@ -69,7 +69,7 @@ int main()
     std::cout << '\n';
 
     for (int i{0}; i < 3; ++i) {
-        uint64_t* ptmp{ (uint64_t*)*(reinterpret_cast<uint64_t*>(dPtrA[i])) };
+        uint64_t* ptmp{ *(reinterpret_cast<uint64_t**>(dPtrA[i])) };
         std::cout << "vPtrA[" << std::dec << i << "]: [ " << std::hex
             << *ptmp << " @ " << ptmp << ", "
             << (*(ptmp + 1)) << " @ " << ptmp + 1
