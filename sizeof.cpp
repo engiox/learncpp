@@ -32,7 +32,7 @@ int main()
     std::cout << "\nSize of int array? ";
     int szint{};
     std::cin >> szint;
-    int* arrInt{ new int[szint] };
+    int* arrInt{ new int[static_cast<size_t>(szint)] };
     std::cout << "sizeof *arrInt[] : " << sizeof(arrInt) << '\n';
 
     return 0;
