@@ -32,8 +32,8 @@ public:
 int main()
 {
     Base b1 {};
-    D1 d1 {};
-    D2 d2 {};
+    D1 d1 {3};
+    D2 d2 {6};
     Base *dPtr{ &d1 };
     dPtr->function1();
 
