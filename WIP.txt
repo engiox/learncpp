@@ -14,3 +14,4 @@ REVIEW
 18.1 - Pointers and references to the base class of derived objects
 Q18.3.cpp
 18.4 - Virtual destructors, virtual assignment, and overriding virtualization
+18.9 - Object slicing
