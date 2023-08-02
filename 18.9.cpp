@@ -38,9 +38,18 @@ int main()
     v.push_back(b);
     v.push_back(d);
 
-    std::vector<int> vi{};
-    vi.push_back(1);
-    vi.push_back(3);
+    for (const auto& elem : v)
+        std::cout << "I am a " << elem.get().getName()
+                  << " with value " << elem.get().getValue() << '\n';
+
+    Derived d1{ 5 };
+    Derived d2{ 6 };
+    Base& b1{ d1 };
+
+    Base b2{ d2 };
+    Derived d3{ b };
+
+    b = d1;
 
     return 0;
 }
