@@ -16,3 +16,4 @@ Q18.3.cpp
 18.4 - Virtual destructors, virtual assignment, and overriding virtualization
 18.9 - Object slicing
 18.10 - Dynamic casting
+18.11 - Printing inherited classes with << operator

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <string_view>
 
@@ -61,7 +62,7 @@ int main()
             break;
         b = getObject(gD);
         std::cout << "getDerived: " << (gD ? "true" : "false") << '\n';
-        std::cout << "static_cast: " << static_cast<Derived*>(b) << '\n';
+        std::cout << "static_cast : " << static_cast<Derived*>(b) << '\n';
         std::cout << "dynamic_cast: " << dynamic_cast<Derived*>(b) << '\n';
     } while (true);
 
