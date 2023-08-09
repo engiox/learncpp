@@ -1,5 +1,6 @@
+19.6 - Partial template specialization for pointer
+
 REVIEW
 19.5 - Why "this->m_array[i]" is needed
         https://stackoverflow.com/a/6592617
         https://isocpp.org/wiki/faq/templates#nondependent-name-lookup-members
-
