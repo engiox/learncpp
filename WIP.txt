@@ -1,4 +1,4 @@
-19.6 - Partial template specialization for pointer
+20.2 - Basic exception handling
 
 REVIEW
 19.5 - Why "this->m_array[i]" is needed
