@@ -29,7 +29,8 @@ public:
 	int& operator[](const int index)
 	{
 		if (index < 0 || index >= getLength())
-			throw ArrayException{ "Invalid index" };
+			//throw ArrayException{ "Invalid index" };  // original solution
+			throw ArrayException{ "Invalid index: " + std::to_string(index) };
 
 		return m_data[index];
 	}
