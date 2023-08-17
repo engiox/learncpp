@@ -29,18 +29,20 @@ void p2()
 {
     try {
         throw -1;
+        throw 'x';
         throw 3.1;
         throw "cstring";
-    }
-    catch (int x) {
-        std::cerr << "caught an int exception with value: " << x << '\n';
     }
     catch (double y) {
         std::cerr << "caught an double exception with value: " << y << '\n';
     }
+    catch (int x) {
+        std::cerr << "caught an int exception with value: " << x << '\n';
+    }
     catch (const std::string& z) {
         std::cerr << "caught an std::string exception with value: " << z << '\n';
     }
+    std::cout << "inspection finished\n";
 }
 
 int main()
@@ -51,4 +53,3 @@ int main()
     p2();
     return 0;
 }
-
