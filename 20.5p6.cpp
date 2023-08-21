@@ -1,19 +1,21 @@
 #include <iostream>
+#include <iomanip>
 
 class Base
 {
 public:
-    Base() { std::cout << "Base created\n"; }
-    ~Base() { std::cout << "Base destroyed\n"; }
+    Base() { std::cout << std::setw(22) << "Base created @ " << this << '\n'; }
+    ~Base() { std::cout << std::setw(22) << "Base destroyed @ " << this << '\n'; }
+    Base(const Base& org) { std::cout << std::setw(22) << "Base copy @ " << this << '\n'; }
 };
 
 class Derived : public Base
 {
 public:
-    Derived() { std::cout << "Derived created\n"; }
-    ~Derived() { std::cout << "Derived destroyed\n"; }
-
-//    Derived(const Derived&) = delete; // not copyable
+    Derived() { std::cout << std::setw(22) << "Derived created @ " << this << '\n'; }
+    ~Derived() { std::cout << std::setw(22) << "Derived destroyed @ " << this << '\n'; }
+    Derived(const Derived& org) : Base()
+        { std::cout << std::setw(22) << "Derived copy @ " << this << '\n'; }
 };
 
 int main()
@@ -36,6 +38,8 @@ int main()
     {
         std::cerr << "caught Base\n";
     }
+
+    std::cout << "Ending program\n";
 
     return 0;
 }
