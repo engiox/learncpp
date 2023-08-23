@@ -1,4 +1,4 @@
-20.2 - Basic exception handling
+M.2 - R-value references
 
 REVIEW
 19.5 - Why "this->m_array[i]" is needed
