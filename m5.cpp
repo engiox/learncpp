@@ -44,7 +44,8 @@ class CopyClass
 {
 public:
     bool m_throw{};
-    CopyClass() = default;
+    //CopyClass() = default;
+    CopyClass() { std::cout << "CopyClass default contructor called\n"; }
     CopyClass(const CopyClass& cc) : m_throw{ cc.m_throw } {
         std::cout << "CopyClass copy constructor called\n";
         if (m_throw) {
