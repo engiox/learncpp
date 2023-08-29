@@ -1,0 +1,15 @@
+MoveClass constructor called with value: 13
+CopyClass default contructor called
+MoveClass move constructor called
+CopyClass copy constructor called
+CopyClass destructor called
+MoveClass destroying MoveClass(empty)
+my_pair.first: MoveClass(13)
+MoveClass copy constructor called
+CopyClass copy constructor called
+moved pair exists
+CopyClass destructor called
+MoveClass destroying MoveClass(13)
+my_pair.first: MoveClass(13)
+CopyClass destructor called
+MoveClass destroying MoveClass(13)

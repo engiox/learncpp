@@ -1,0 +1,15 @@
+MoveClass constructor called with value: 13
+CopyClass default contructor called
+MoveClass move constructor called
+CopyClass copy constructor called
+CopyClass destructor called
+MoveClass destroying MoveClass(empty)
+my_pair.first: MoveClass(13)
+my_pair.second.m_throw = true;
+MoveClass move constructor called
+CopyClass copy constructor called
+MoveClass destroying MoveClass(13)
+Error found: abort!
+my_pair.first: MoveClass(empty)
+CopyClass destructor called
+MoveClass destroying MoveClass(empty)
