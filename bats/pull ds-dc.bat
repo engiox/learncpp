@@ -1,3 +1,3 @@
-@CD /D C:\Users\cryoon\AppData\Local\KojimaProductions\DeathStrandingDC\241672382
+@CD /D C:\Users\x\AppData\Local\KojimaProductions\DeathStrandingDC\1243223632
 @git pull
 @PAUSE

@@ -1,3 +1,3 @@
-@CD /D C:\Users\x\AppData\LocalLow\Playdead\INSIDE
+@CD /D %AppData%\..\LocalLow\Playdead\INSIDE
 @git pull
 @PAUSE
