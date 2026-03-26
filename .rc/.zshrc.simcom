@@ -117,9 +117,8 @@ alias ls="ls --color=tty --time-style=long-iso --block-size=\"'1\""
 #. /opt/openfoam9/etc/bashrc
 #. /opt/openfoam10/etc/bashrc
 #. /opt/openfoam11/etc/bashrc
-#. /usr/lib/openfoam/openfoam2112/etc/bashrc
-#. /usr/lib/openfoam/openfoam2206/etc/bashrc
 #. /usr/lib/openfoam/openfoam2306/etc/bashrc
-#. /usr/lib/openfoam/openfoam2312/etc/bashrc
-. /usr/lib/openfoam/openfoam2406/etc/bashrc
+#. /usr/lib/openfoam/openfoam2406/etc/bashrc
+#. /usr/lib/openfoam/openfoam2412/etc/bashrc
+. /usr/lib/openfoam/openfoam2506/etc/bashrc
 # END - OpenFOAM resource files
