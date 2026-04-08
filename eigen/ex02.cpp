@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Eigen/Dense>
+#include <Eigen/Core>
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
@@ -11,4 +12,7 @@ int main() {
   VectorXd v(3);
   v << 1, 2, 3;
   std::cout << "m * v =" << std::endl << m * v << std::endl;
+
+  std::cout << "Eigen version: " << EIGEN_MAJOR_VERSION << "."
+            << EIGEN_MINOR_VERSION << std::endl;
 }
