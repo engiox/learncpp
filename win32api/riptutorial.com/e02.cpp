@@ -4,7 +4,7 @@
 const TCHAR CLSNAME[] = TEXT("helloworldWClass");
 LRESULT CALLBACK winproc(HWND hwnd, UINT wm, WPARAM wp, LPARAM lp);
 
-int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, PTSTR cmdline, int cmdshow)
+int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPTSTR cmdline, int cmdshow)
 {
     WNDCLASSEX wc{};
     MSG msg;
