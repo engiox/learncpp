@@ -1,0 +1,96 @@
+ E 드라이브의 볼륨: 새 볼륨
+ 볼륨 일련 번호: 8291-3237
+
+ E:\Archive\HEHE 디렉터리
+
+26-06-08(월)  오후 07:15    <DIR>          .
+26-06-08(월)  오후 07:15    <DIR>          ..
+26-01-20(화)  오후 08:31    <DIR>          Baldur's Gate 3 [FitGirl Repack]
+19-06-14(금)  오후 07:21    <DIR>          Battlefield 3 - [DODI Repack]
+17-11-16(목)  오후 10:36    <DIR>          Battlefield One
+17-02-07(화)  오후 11:35    <DIR>          Call Of Duty - Modern Wafare 2
+18-08-24(금)  오후 07:50    <DIR>          Call Of Duty - World.At.War
+18-01-18(목)  오후 06:57    <DIR>          Call of Duty - WWII [FitGirl Repack]
+17-02-09(목)  오후 08:53    <DIR>          Call of Duty 2
+17-02-09(목)  오후 09:47    <DIR>          Call Of Duty 4 - Modern Warfare
+17-02-07(화)  오후 11:39    <DIR>          Cannon.Fodder
+26-01-25(일)  오후 03:20        26,374,093 cemu-2.6-windows-x64.zip
+24-11-07(목)  오전 12:15    <DIR>          Crysis-Razor1911
+26-05-11(월)  오후 10:21    <DIR>          Death Stranding [FitGirl Repack]
+26-03-23(월)  오후 07:33    <DIR>          Diablo 2 Setup
+26-02-23(월)  오후 07:46    <DIR>          Diablo II Resurrected RotW [FitGirl Repack]
+26-01-20(화)  오후 09:58    <DIR>          DOOM Eternal [FitGirl Repack]
+17-02-07(화)  오후 10:33    <DIR>          DOS
+17-02-07(화)  오후 11:41    <DIR>          dos_abandonware
+26-04-15(수)  오전 12:31    <DIR>          DOS_SCUMM
+25-12-17(수)  오후 08:52    <DIR>          Elden Ring [Repack] by Wanterlude
+17-02-07(화)  오후 08:14    <DIR>          Exult
+14-06-10(화)  오후 09:22         2,055,009 Exultwin32.exe
+17-02-09(목)  오후 08:52    <DIR>          F.E.A.R
+17-02-07(화)  오후 11:48    <DIR>          F.E.A.R 2 Project_Origin_Extracted-ready_to_play_NO_STEAM_NEEDED_7BRenaFUSED_7D
+21-02-18(목)  오후 08:07    <DIR>          Factorio [FitGirl Repack]
+19-02-18(월)  오후 11:01    <DIR>          FalconBMS
+22-03-21(월)  오후 10:57    <DIR>          Fallout 3 New Vegas [FitGirl Repack]
+22-02-03(목)  오후 08:26    <DIR>          Fallout 3 [FitGirl Repack]
+23-10-25(수)  오후 09:22    <DIR>          Fallout_4_Game_of_the_Year_Edition_1.10.163.0_(66700)_win_gog
+17-02-05(일)  오전 10:40    <DIR>          Far.Cry.3-RELOADED
+21-08-25(수)  오후 07:40    <DIR>          Final Fantasy I-II-III Pixel Remaster [FitGirl Repack]
+17-02-05(일)  오전 10:34    <DIR>          Freespace 1 & 2 - Gog.com Versions
+17-11-16(목)  오전 07:05    <DIR>          Getting Over It with Bennett Foddy
+26-02-11(수)  오후 08:54    <DIR>          God of War Ragnarok [FitGirl Repack]
+26-02-11(수)  오후 09:11    <DIR>          God of War [FitGirl Repack]
+17-02-09(목)  오후 08:54    <DIR>          Grand Theft Auto 1, 2, III
+17-02-07(화)  오후 08:12    <DIR>          Grand.Theft.Auto.Episodes.from.Liberty.City-RELOADED seeded by www.p2p-crew.to
+18-05-26(토)  오후 03:29    <DIR>          Grand.Theft.Auto.IV.Update 1.0.7.0 -Razor1911
+17-02-11(토)  오전 09:09    <DIR>          Grand_Theft_Auto_IV-Razor1911
+17-02-07(화)  오후 11:48    <DIR>          Half-Life GOTY + Opposing Force + Blue Shift [PC-Game]
+17-02-09(목)  오후 08:59    <DIR>          Halo - Combat Evolved
+19-05-18(토)  오후 06:40    <DIR>          Halo2_EnglishPCDVD
+23-08-09(수)  오후 07:56    <DIR>          Hogs_of_War
+21-08-25(수)  오후 06:41    <DIR>          Hollow Knight [FitGirl Repack]
+23-08-04(금)  오전 12:24    <DIR>          INSIDE [FitGirl Repack]
+17-02-07(화)  오후 10:33    <DIR>          LBA
+07-07-03(화)  오후 09:22           483,571 LbaWinSetup_0[1].8.1.exe
+17-02-07(화)  오후 11:51    <DIR>          Mass_Effect
+17-02-07(화)  오후 11:57    <DIR>          Mass_Effect_2
+26-04-29(수)  오후 07:33    <DIR>          Metal Gear Solid V - Ground Zeroes [FitGirl Repack]
+26-04-29(수)  오후 07:39    <DIR>          Metal Gear Solid V - TPP [FitGirl Repack]
+26-04-29(수)  오후 07:32    <DIR>          MGS Delta - Snake Eater [FitGirl Repack]
+21-02-18(목)  오후 07:19    <DIR>          Outward [FitGirl Repack]
+17-02-08(수)  오전 12:04    <DIR>          Patches
+18-07-17(화)  오후 07:41    <DIR>          Portal.2-SKIDROW
+26-05-26(화)  오후 07:40    <DIR>          PRAGMATA [FitGirl Repack]
+21-08-25(수)  오후 07:27    <DIR>          Quake - Enhanced [FitGirl Repack]
+26-06-22(월)  오후 07:15    <DIR>          S.T.A.L.K.E.R._Trilogy_EE
+17-02-08(수)  오전 12:08    <DIR>          Singularity-RELOADED
+17-02-07(화)  오후 10:46    <DIR>          SNES
+26-01-20(화)  오후 09:25    <DIR>          Star Wars Jedi - Fallen Order [FitGirl Repack]
+19-02-09(토)  오후 12:59    <DIR>          StarCraft
+26-01-20(화)  오후 09:56    <DIR>          StarCraft Remastered [FitGirl Repack]
+17-02-08(수)  오전 12:13    <DIR>          StarCraft.II.Wings.of.Liberty_20-_20RELOADED
+26-01-20(화)  오후 10:03    <DIR>          Starfield [Repack] by Wanterlude
+17-02-07(화)  오후 10:31    <DIR>          Terminator.Future.Shock.CloneCD.UK.version
+26-01-20(화)  오후 09:56    <DIR>          The Elders Scrolls V - Skyrim - Anniversay Edition [FitGirl Repack]
+26-01-21(수)  오후 07:04    <DIR>          The Last of Us - Part I [FitGirl Repack]
+26-01-20(화)  오후 09:56    <DIR>          The Witcher 3 CE [FitGirl Repack]
+08-02-13(수)  오전 09:38     8,978,135,040 The.Orange.Box-YuVaL666.iso
+26-01-20(화)  오후 09:55    <DIR>          Titan Quest - Anniversary Edition [FitGirl Repack]
+21-08-25(수)  오후 07:27    <DIR>          Twelve Minutes [FitGirl Repack]
+19-02-18(월)  오후 10:33    <DIR>          Ultima
+19-02-18(월)  오후 11:04    <DIR>          Ultima Anthology - 0 1 2 3 4 5 6 7 8 Underworld 1+2 Worlds of Ultima 1+2
+17-02-05(일)  오전 09:48    <DIR>          Universe Sandbox 2 ~Patrik
+16-06-06(월)  오전 11:37       355,157,708 Universe.Sandbox.2.Alpha.15.1.zip
+21-02-18(목)  오후 08:08    <DIR>          Warcraft I & II Bundle [FitGirl Repack]
+18-05-26(토)  오후 04:28            85,370 xlive.rar
+26-02-01(일)  오전 06:09       441,315,152 Yuzu + Firmware + Keys.zip
+26-01-25(일)  오후 03:20       100,060,892 yuzu-emulator-by-yuzuemulators.com.zip
+08-04-12(토)  오전 04:11           867,785 zsnesw151.zip
+19-02-18(월)  오후 11:04    <DIR>          ~cd-keys
+19-02-18(월)  오후 10:22    <DIR>          ~Manual
+20-01-22(수)  오후 10:40    <DIR>          ~oldies
+19-02-18(월)  오후 10:47    <DIR>          ~patches
+17-02-07(화)  오후 09:58    <DIR>          ~Play Station
+19-02-18(월)  오후 10:12    <DIR>          ~ROMs
+19-02-18(월)  오후 10:48    <DIR>          ~SNES
+               9개 파일       9,904,534,620 바이트
+              80개 디렉터리  422,505,304,064 바이트 남음
